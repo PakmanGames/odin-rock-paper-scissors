@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    min-height: 100vh;
+    gap: 0px;
+    padding: 0px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.container, .rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.heading, .footing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px;
+    flex: 1;
+
+}
+
+.heading {
+    background-color: antiquewhite;
+}
+
+.rule-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 10px;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 16px;
+    border: 5px solid darkgrey;
+}
+
+.footing {
+    background-color: beige;
+}
+
+.footing .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footing .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+img {
+    height: auto;
+    width: 200px;
+    border-radius: 16px;
+    border: 5px solid darkgrey;
+}
