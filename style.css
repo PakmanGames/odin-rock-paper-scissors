@@ -2,9 +2,10 @@
 
 body {
     min-height: 100vh;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     gap: 0px;
     padding: 0px;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+    margin: 0px;
 }
 
 .container, .rules {
@@ -20,6 +21,10 @@ body {
     align-self: center;
 }
 
+.heading .title {
+    margin: 150px 0px 0px 0px;
+}
+
 .heading, .footing {
     display: flex;
     flex-direction: column;
@@ -27,13 +32,17 @@ body {
     gap: 50px;
     padding: 50px;
     flex: 1;
-
 }
 
 .heading {
     background-color: antiquewhite;
 }
 
+.footing {
+    background-color: beige;
+}
+
+/* Make conditions to win and rules stand out */
 .rule-list {
     list-style: none;
     display: flex;
@@ -47,10 +56,7 @@ body {
     border: 5px solid darkgrey;
 }
 
-.footing {
-    background-color: beige;
-}
-
+/* Make images wrap when window is resized */
 .footing .container {
     flex-direction: row;
     flex-wrap: wrap;

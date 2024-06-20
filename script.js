@@ -49,7 +49,7 @@ function playGame() {
             console.log("You win! Paper beats Rock.");
             humanScore++;
         } else {
-        console.log("Draw occured! Scores remain unchanged.");
+        console.log("Draw occurred! Scores remain unchanged.");
         }
         console.log(`The current scores are as follows: Human: ${humanScore} and Computer: ${computerScore}`);
     }
