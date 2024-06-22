@@ -53,10 +53,13 @@ function playGame() {
     let roundNum = 1;
     let humanScore = 0;
     let computerScore = 0;
-    
+
     let computerSelection = null;
 
     function playRound(humanChoice, computerChoice) {
+        round.textContent = `Round ${roundNum}`;
+        console.log(`Round ${roundNum}`);
+
         if (humanChoice === "rock" && computerChoice === "paper") {
             dialogue.textContent = "You lose! Paper beats Rock.";
             console.log("You lose! Paper beats Rock.");
@@ -88,10 +91,22 @@ function playGame() {
         roundNum++;
         scores.textContent = `The current scores are as follows: Human: ${humanScore} and Computer: ${computerScore}`;
         console.log(`The current scores are as follows: Human: ${humanScore} and Computer: ${computerScore}`);
-    }
 
-    round.textContent = `Round ${roundNum}`;
-    console.log(`Round ${roundNum}`);
+        if (humanScore == 5 || computerScore == 5) {
+            round.textContent = "GAME OVER";
+            const buttons = document.querySelectorAll("button");
+            for (const button of buttons) {
+                button.classList.add("hidden");
+            }
+            setTimeout(() => {
+                if (humanScore == 5) {
+                    dialogue.textContent = "You've defeated RPS-3000!";
+                } else if (computerScore == 5) {
+                    dialogue.textContent = "You suffer a humiliating defeat.";
+                }
+            }, 2000);
+        }
+    }
 
     dialogue.textContent = "RPS-3000 is waiting for you to make your move."
 
