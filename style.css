@@ -16,13 +16,9 @@ body {
 }
 
 .title {
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     align-self: center;
-}
-
-.heading .title {
-    margin: 150px 0px 0px 0px;
 }
 
 .heading, .footing {
@@ -40,6 +36,18 @@ body {
 
 .footing {
     background-color: beige;
+}
+
+.arena {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+    background-color: lightgoldenrodyellow;
+    border-radius: 16px;
+    border: 5px solid darkgrey;
 }
 
 /* Make conditions to win and rules stand out */
@@ -76,4 +84,14 @@ img {
     width: 200px;
     border-radius: 16px;
     border: 5px solid darkgrey;
+}
+
+.hidden {
+    display: none;
+}
+
+.rps-3000 {
+    height:auto;
+    width: 500px;
+    border: none;
 }

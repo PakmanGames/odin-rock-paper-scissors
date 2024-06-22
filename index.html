@@ -4,39 +4,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
-        <link rel="icon" href="./images/scissors-icon.png">
+        <link rel="icon" href="./images/moves/play-scissors.png">
         <title>Rock Paper Scissors</title>
     </head>
     <body class="container">
+
         <div class="heading">
-            <div class="title">Welcome to Console Rock Paper Scissors!</div>
-            <div>To play press Ctrl+Shift+J (Windows) or Cmd+Option+J (Mac) to open the console!</div>
-            <div class="rules">
-                 <div>These are the rules to playing Rock Paper Scissors:</div>
+            <div class="title">Welcome to Rock Paper Scissors!</div>
+            <div>RPS-3000 has challenged you to a game of rock paper scissors! First to 5 wins!</div>
+            <div class="arena">
+                <img src="./images/rps-3000.png" alt="rps-3000" class="rps-3000 hidden">
                 <ul class="rule-list">
+                    <li><em><strong>These are the rules to playing Rock Paper Scissors:</strong></em></li>
                     <li>Rock beats Scissors</li>
                     <li>Scissors beats Paper</li>
                     <li>Paper beats Rock</li>
+                    <li>First to 5 points is the winner</li>
                 </ul>
+                <button class="start">Start Game</button>
             </div>
         </div>
+
         <div class="footing">
-            <div class="title">These are the different options to play Rock Paper Scissors</div>
+            <div class="title">These are the different options to choose from:</div>
             <div class="container">
                 <div class="info">
                     <img src="./images/rock.jpg" alt="Rock">
-                    <div>Type "Rock" to pick Rock</div>
+                    <button class="rock hidden">Rock</button>
                 </div>
                 <div class="info">
                     <img src="./images/paper.jpg" alt="Paper">
-                    <div>Type "Paper" to pick Paper</div>
+                    <button class="paper hidden">Paper</button>
                 </div>
                 <div class="info">
                     <img src="./images/scissors.jpg" alt="Scissors">
-                    <div>Type "Scissors" to pick Scissors</div>
+                    <button class="scissors hidden">Scissors</button>
                 </div>
             </div>
         </div>
+
         <script src="./script.js"></script>
     </body>
 </html>
