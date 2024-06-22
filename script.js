@@ -19,6 +19,7 @@ for (let i = 0; i < imageNames.length; i++) {
     images[i].className = "move";
 }
 
+
 start.addEventListener("click", () => {
     arena.replaceChildren(round, rpsBot, dialogue, scores);
     unhide = document.querySelectorAll(".hidden");
@@ -43,10 +44,24 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    // humanSelection = prompt(`Pick one: "Rock", "Paper", or "Scissors"`);
-    humanSelection = humanSelection.toLowerCase();
-    return humanSelection;
+function getHumanImage(humanChoice) {
+    if (humanChoice == "rock") {
+        return images[0];
+    } else if (humanChoice == "paper") {
+        return images[1];
+    } else if (humanChoice == "scissors") {
+        return images[2];
+    }
+}
+
+function getComputerImage(computerChoice) {
+    if (computerChoice == "rock") {
+        return images[3];
+    } else if (computerChoice == "paper") {
+        return images[4];
+    } else if (computerChoice == "scissors") {
+        return images[5];
+    }
 }
 
 function playGame() {
@@ -57,40 +72,41 @@ function playGame() {
     let computerSelection = null;
 
     function playRound(humanChoice, computerChoice) {
+        arena.style.padding = "30px 30px 0px 30px"
+
+        if (roundNum > 1) {
+            arena.removeChild(arena.lastChild);
+            arena.removeChild(arena.lastChild);
+        }
+
         round.textContent = `Round ${roundNum}`;
-        console.log(`Round ${roundNum}`);
+
+        arena.appendChild(getComputerImage(computerChoice));
+        arena.appendChild(getHumanImage(humanChoice));
 
         if (humanChoice === "rock" && computerChoice === "paper") {
             dialogue.textContent = "You lose! Paper beats Rock.";
-            console.log("You lose! Paper beats Rock.");
             computerScore++;
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
             dialogue.textContent = "You lose! Rock beats Scissors.";
-            console.log("You lose! Rock beats Scissors.");
             computerScore++;
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
             dialogue.textContent = "You lose! Scissors beats Paper.";
-            console.log("You lose! Scissors beats Paper.");
             computerScore++;
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
             dialogue.textContent = "You win! Rock beats Scissors.";
-            console.log("You win! Rock beats Scissors.");
             humanScore++;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
             dialogue.textContent = "You win! Scissors beats paper.";
-            console.log("You win! Scissors beats paper.");
             humanScore++;
         } else if (humanChoice === "paper" && computerChoice === "rock") {
             dialogue.textContent = "You win! Paper beats Rock.";
-            console.log("You win! Paper beats Rock.");
             humanScore++;
         } else {
         dialogue.textContent = "Draw occurred! Scores remain unchanged.";
-        console.log("Draw occurred! Scores remain unchanged.");
         }
         roundNum++;
         scores.textContent = `The current scores are as follows: Human: ${humanScore} and Computer: ${computerScore}`;
-        console.log(`The current scores are as follows: Human: ${humanScore} and Computer: ${computerScore}`);
 
         if (humanScore == 5 || computerScore == 5) {
             round.textContent = "GAME OVER";
@@ -104,6 +120,9 @@ function playGame() {
                 } else if (computerScore == 5) {
                     dialogue.textContent = "You suffer a humiliating defeat.";
                 }
+                arena.removeChild(arena.lastChild);
+                arena.removeChild(arena.lastChild);
+                arena.style.padding = "30px";
             }, 2000);
         }
     }
@@ -112,17 +131,14 @@ function playGame() {
 
     rockHand.addEventListener("click", () => {
         computerSelection = getComputerChoice();
-        console.log(computerSelection);
         playRound("rock", computerSelection);
     });
     paperHand.addEventListener("click", () => {
         computerSelection = getComputerChoice();
-        console.log(computerSelection);
         playRound("paper", computerSelection);
     });
     scissorsHand.addEventListener("click", () => {
         computerSelection = getComputerChoice();
-        console.log(computerSelection);
         playRound("scissors", computerSelection);
     });
 }

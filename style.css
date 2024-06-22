@@ -90,6 +90,12 @@ img {
     display: none;
 }
 
+.move {
+    height: auto;
+    width: 300px;
+    border: none;
+}
+
 .rps-3000 {
     height:auto;
     width: 500px;
