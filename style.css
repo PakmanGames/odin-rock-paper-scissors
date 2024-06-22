@@ -30,6 +30,7 @@ body {
     flex: 1;
 }
 
+/* Separate background colours to distinguish */
 .heading {
     background-color: antiquewhite;
 }
@@ -79,6 +80,7 @@ body {
     align-items: center;
 }
 
+/* Make images stand out more */
 img {
     height: auto;
     width: 200px;
@@ -86,10 +88,21 @@ img {
     border: 5px solid darkgrey;
 }
 
+/* Stylized buttons that stand out */
+button {
+    border-radius: 16px;
+    border: 3px solid darkgrey;
+    background-color: greenyellow;
+    font-weight: bold;
+    color: black;
+}
+
+/* For hiding certain elements */
 .hidden {
     display: none;
 }
 
+/* Larger sizes for move sprites compared to images */
 .move {
     height: auto;
     width: 300px;
